@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Navbar styles */
+    .navbar {
+      background-color: #333;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .navbar-nav {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-item {
+      margin-left: 10px;
+    }
+
+    .nav-link {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Hamburger menu styles */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #fff;
+      margin-bottom: 4px;
+    }
+
+    /* Media query for smaller screens */
+    @media (max-width: 768px) {
+      .navbar-nav {
+        display: none;
+      }
+
+      .navbar.active .navbar-nav {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <span class="navbar-brand">Logo</span>
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var hamburger = document.querySelector(".hamburger");
+      var navbar = document.querySelector(".navbar");
+      var navbarNav = document.querySelector(".navbar-nav");
+
+      hamburger.addEventListener("click", function() {
+        navbar.classList.toggle("active");
+      });
+    });
+  </script>
+</body>
+</html>
